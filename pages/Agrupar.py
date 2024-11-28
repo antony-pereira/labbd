@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import mysql.connector
-import matplotlib.pyplot as plt
 from app import get_db_connection
 from app import logout
 
