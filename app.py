@@ -32,24 +32,13 @@ def set_role():
     st.session_state.role = st.session_state._role
 
 def get_db_connection(perfil):
-    if perfil == 'Aberto':
-        return mysql.connector.connect(
-            host=st.secrets["DB_HOST"],
-            user='user_aberto',
-            password='senha_aberto',  # Senha do usuário 'usuario_aberto'
-            port=st.secrets["DB_PORT"],
-            db=st.secrets["DB_NAME"]
-        )
-    elif perfil == 'Gerencial':
-        return mysql.connector.connect(
-            host=st.secrets["DB_HOST"],
-            user='user_gerencial',
-            password='senha_gerencial',  # Senha do usuário 'usuario_gerencial'
-            port=st.secrets["DB_PORT"],
-            db=st.secrets["DB_NAME"]
-        )
-    else:
-        raise ValueError("Perfil desconhecido")
+    return conn = mysql.connector.connect(
+                    host=st.secrets["DB_HOST"],
+                    user=st.secrets["DB_USERNAME"],
+                    password=st.secrets["DB_PASSWORD"],
+                    port=st.secrets["DB_PORT"],
+                    db=st.secrets["DB_NAME"]
+                )
 
 if not st.session_state['logged_in']:
     if st.session_state['show_cadastro']:
