@@ -32,7 +32,7 @@ def set_role():
     st.session_state.role = st.session_state._role
 
 def get_db_connection(perfil):
-    return conn = mysql.connector.connect(
+    return mysql.connector.connect(
                     host=st.secrets["DB_HOST"],
                     user=st.secrets["DB_USERNAME"],
                     password=st.secrets["DB_PASSWORD"],
