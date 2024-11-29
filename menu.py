@@ -10,7 +10,7 @@ def authenticated_menu():
     st.sidebar.page_link("pages/notasideb.py", label="Notas IDEB")
     st.sidebar.page_link("pages/bookmark.py", label="Lista de escolas")
     if st.session_state.role in ["Gerencial"]:
-        st.sidebar.page_link("pages/CRUD.py", label="Lista de Usuarios e Bookmarks")
+        st.sidebar.page_link("pages/CRUD.py", label="Lista de Bookmarks")
         
 
 
