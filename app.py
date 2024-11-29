@@ -37,13 +37,16 @@ def get_db_connection(perfil):
             host=st.secrets["DB_HOST"],
             user='user_aberto',
             password='senha_aberto',  # Senha do usuário 'usuario_aberto'
+            port=st.secrets["DB_PORT"],
             db=st.secrets["DB_NAME"]
         )
     elif perfil == 'Gerencial':
         return mysql.connector.connect(
             host=st.secrets["DB_HOST"],
+            port=st.secrets["DB_PORT"],
             user='user_gerencial',
             password='senha_gerencial',  # Senha do usuário 'usuario_gerencial'
+            port=st.secrets["DB_PORT"],
             db=st.secrets["DB_NAME"]
         )
     else:
