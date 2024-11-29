@@ -114,6 +114,14 @@ if st.button("Listar turmas e disciplinas"):
     turmas_df = load_turmas(int(co_entidade))
     st.write("Turmas e disciplinas disponíveis:")
     st.write(turmas_df)
+    if st.session_state.role in ["Gerencial"]:
+        csv = turmas_df.to_csv(index=False).encode('utf-8')
+        st.download_button(
+            label="Baixar tabela como CSV",
+            data=csv,
+            file_name='dados.csv',
+            mime='text/csv'
+        )
 
 
 if st.sidebar.button("Logout"):
